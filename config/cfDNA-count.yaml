@@ -1,0 +1,38 @@
+sort:
+  onlykeep_properpair: true
+tmp_dir: ./temp # dir to store temporary files
+genome: "/ChIP_seq_2/StemCells/data/genome/GRCh38.primary_assembly.genome.fa"
+
+remove_duplications: false
+getBamStatistics_duplications: false
+GC: # for GCBias
+  genome_size:
+    - GRCh37: 2864785220
+    - GRCh38: 2913022398
+    - T2T/CHM13CAT_v2: 3117292070
+    - GRCm37: 2620345972
+    - GRCm38: 2652783500
+    - GRCm39: 2654621783
+    - dm3: 162367812
+    - dm6: 142573017
+    - GRCz10: 1369631918
+    - GRCz11: 1368780147
+    - WBcel235: 100286401
+    - TAIR10: 119482012
+conda:
+  cfDNA_base: "/home/luosg/miniconda3/envs/cfDNA_base"
+  GCBias: "/home/luosg/miniconda3/envs/GCBias"
+wig:
+  bin: 50
+
+count_matrix_gene:
+  region: "exon"
+  gtf: "/ChIP_seq_2/StemCells/data/genome/gencode.v47.primary_assembly.annotation.gtf"
+count_matrix_TE:
+  region: "exon"
+  gtf: "/ChIP_seq_2/StemCells/data/genome/GRCh38_GENCODE_rmsk_TE.gtf"
+  level: 
+    - "gene_id"
+    - "transcript_id"
+    - "family_id"
+    - "class_id"

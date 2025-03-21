@@ -1,0 +1,5 @@
+gtf: "/ChIP_seq_2/StemCells/data/genome/gencode.v47.primary_assembly.annotation.gtf"
+geneBed: ""
+conda:
+  cfDNA_base: "/home/luosg/miniconda3/envs/cfDNA_base"
+  GCBias: "/home/luosg/miniconda3/envs/GCBias"

@@ -1,0 +1,27 @@
+name: cfDNA_base 
+channels:
+  - bioconda
+  - r
+  - conda-forge
+  - defaults
+  - https://conda.anaconda.org/IBMDecisionOptimization/linux-64
+  - http://conda.anaconda.org/dranew
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+dependencies:
+  - fastqc=0.12.1
+  - bwa-mem2=2.2.1
+  - samtools=1.6
+  - gatk4=4.6.1.0
+  - subread=2.0.8
+  - deeptools=3.5.6
+  - ucsc-fatotwobit=472
+
+path: /usr/bin/R
+versions: 4.4.2
+dependencies:
+  - MEDIPS=1.58.0
+  - BSgenome.Hsapiens.Gencode.GRCh38=1.0.0
+  - argparse=2.2.5
+
+

@@ -1,0 +1,3 @@
+conda:
+  cfDNA_base: "/home/luosg/miniconda3/envs/cfDNA_base"
+genome: "/ChIP_seq_2/StemCells/data/genome/GRCh38.primary_assembly.genome.fa"

@@ -1,0 +1,4 @@
+genome: "/ChIP_seq_2/StemCells/data/genome/GRCh38.primary_assembly.genome.fa"
+conda:
+  manta: "/home/luosg/miniconda3/envs/manta"
+  

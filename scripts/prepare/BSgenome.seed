@@ -1,0 +1,12 @@
+Package: BSgenome.Hsapiens.Gencode.GRCh38
+Title: Full genomic sequences for Homo sapiens (GENCODE GRCh38 version 47 PRI)
+Description: Full genomic sequences for Homo sapiens (GRCh38) as provided by Gencode (GRCh38, Apr. 2024) and stored in Biostrings objects.
+Version: 1.0.0
+organism: Homo sapiens
+common_name: Human
+provider: Gencode
+genome: GRCh38
+release_date: Apr. 2024
+organism_biocview: Homo_sapiens
+BSgenomeObjname: Hsapiens
+seqfile_name: output/gn/hg38.2bit
