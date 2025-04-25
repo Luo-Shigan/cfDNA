@@ -1,10 +1,5 @@
-sort:
-  onlykeep_properpair: true
 tmp_dir: ./temp # dir to store temporary files
 genome: "/ChIP_seq_2/StemCells/data/genome/GRCh38.primary_assembly.genome.fa"
-
-remove_duplications: false
-getBamStatistics_duplications: false
 GC: # for GCBias
   genome_size:
     - GRCh37: 2864785220
@@ -24,7 +19,9 @@ conda:
   GCBias: "/home/luosg/miniconda3/envs/GCBias"
 wig:
   bin: 50
-
+bwaMem2:
+  human: "/ChIP_seq_2/Data/index/Homo_sapiens/GENCODE/GRCh38/BWA-mem2"
+  mouse: "/ChIP_seq_2/Data/index/Mus_musculus/GENCODE/GRCm39/BWA-mem2"
 count_matrix_gene:
   region: "exon"
   gtf: "/ChIP_seq_2/StemCells/data/genome/gencode.v47.primary_assembly.annotation.gtf"

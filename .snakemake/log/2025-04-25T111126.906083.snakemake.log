@@ -1,0 +1,56 @@
+host: d419
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+addReadsGroup            4
+all                      1
+bwaMem2_alignment        4
+count_matrix_TE          4
+count_matrix_gene        1
+dedup                    4
+getBamStatistics         4
+getFragmentSize          1
+sort                     4
+trimming                 4
+wig                      4
+total                   35
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri Apr 25 11:11:26 2025]
+localrule trimming:
+    input: ../../data/fq/CON_2A_1.fq.gz, ../../data/fq/CON_2A_2.fq.gz
+    output: ../../output/mouse/cutadapt/CON_2A_1.fq.gz, ../../output/mouse/cutadapt/CON_2A_2.fq.gz, ../../output/mouse/cutadapt/CON_2A/trimming_statistics_1.txt, ../../output/mouse/cutadapt/CON_2A/trimming_statistics_2.txt
+    jobid: 16
+    reason: Missing output files: ../../output/mouse/cutadapt/CON_2A_2.fq.gz, ../../output/mouse/cutadapt/CON_2A_1.fq.gz
+    wildcards: genome=mouse, sample_id=CON_2A
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:11:27 2025]
+localrule trimming:
+    input: ../../data/fq/CON_1A_1.fq.gz, ../../data/fq/CON_1A_2.fq.gz
+    output: ../../output/mouse/cutadapt/CON_1A_1.fq.gz, ../../output/mouse/cutadapt/CON_1A_2.fq.gz, ../../output/mouse/cutadapt/CON_1A/trimming_statistics_1.txt, ../../output/mouse/cutadapt/CON_1A/trimming_statistics_2.txt
+    jobid: 11
+    reason: Missing output files: ../../output/mouse/cutadapt/CON_1A_2.fq.gz, ../../output/mouse/cutadapt/CON_1A_1.fq.gz
+    wildcards: genome=mouse, sample_id=CON_1A
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 11:11:27 2025]
+localrule trimming:
+    input: ../../data/fq/UCS_2A_1.fq.gz, ../../data/fq/UCS_2A_2.fq.gz
+    output: ../../output/mouse/cutadapt/UCS_2A_1.fq.gz, ../../output/mouse/cutadapt/UCS_2A_2.fq.gz, ../../output/mouse/cutadapt/UCS_2A/trimming_statistics_1.txt, ../../output/mouse/cutadapt/UCS_2A/trimming_statistics_2.txt
+    jobid: 21
+    reason: Missing output files: ../../output/mouse/cutadapt/UCS_2A_1.fq.gz, ../../output/mouse/cutadapt/UCS_2A_2.fq.gz
+    wildcards: genome=mouse, sample_id=UCS_2A
+    threads: 8
+    resources: tmpdir=/tmp
+
