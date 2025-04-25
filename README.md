@@ -1,6 +1,7 @@
 #
 
-索引建立不包括在规则内，需要额外建立
+索引建立不包括在规则内，需要额外建立。
+参考大佬[Bao Pengfei](https://github.com/HUNNNGRY)的[cfDNA-NGS-analysis](https://github.com/HUNNNGRY/cfDNA-NGS-analysis)，对流程进行了改造
 
 ## 开发日志
 
