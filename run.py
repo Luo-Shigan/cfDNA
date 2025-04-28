@@ -74,7 +74,7 @@ if __name__ == "__main__":
             f"getBamStatistics_duplications={getBamStatistics_duplications}",
             f"remove_duplications={remove_duplications}",
             "--use-conda",
-            "--dry-run"
+            "--dry-run",
         ]
     else:
         cmd = [
@@ -93,4 +93,4 @@ if __name__ == "__main__":
 
     # 执行
     print("Executing command:", " ".join(cmd))
-    # subprocess.run(cmd)
+    subprocess.run(cmd)

@@ -54,3 +54,65 @@ localrule trimming:
     threads: 8
     resources: tmpdir=/tmp
 
+[Fri Apr 25 11:51:05 2025]
+Finished job 16.
+1 of 35 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 11:51:05 2025]
+localrule trimming:
+    input: ../../data/fq/UCS_1A_1.fq.gz, ../../data/fq/UCS_1A_2.fq.gz
+    output: ../../output/mouse/cutadapt/UCS_1A_1.fq.gz, ../../output/mouse/cutadapt/UCS_1A_2.fq.gz, ../../output/mouse/cutadapt/UCS_1A/trimming_statistics_1.txt, ../../output/mouse/cutadapt/UCS_1A/trimming_statistics_2.txt
+    jobid: 6
+    reason: Missing output files: ../../output/mouse/cutadapt/UCS_1A_1.fq.gz, ../../output/mouse/cutadapt/UCS_1A_2.fq.gz
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 8
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 11:53:28 2025]
+Finished job 21.
+2 of 35 steps (6%) done
+Select jobs to execute...
+Waiting for more resources.
+[Fri Apr 25 12:08:18 2025]
+Finished job 11.
+3 of 35 steps (9%) done
+Execute 1 jobs...
+
+[Fri Apr 25 12:08:18 2025]
+localrule bwaMem2_alignment:
+    input: ../../output/mouse/cutadapt/CON_1A_1.fq.gz, ../../output/mouse/cutadapt/CON_1A_2.fq.gz
+    output: ../../output/mouse/bam/CON_1A.bam, ../../output/mouse/bam/CON_1A.sam
+    log: ../../output/log/mouse/CON_1A/bwa-alignment.txt
+    jobid: 10
+    reason: Missing output files: ../../output/mouse/bam/CON_1A.bam; Input files updated by another job: ../../output/mouse/cutadapt/CON_1A_2.fq.gz, ../../output/mouse/cutadapt/CON_1A_1.fq.gz
+    wildcards: genome=mouse, sample_id=CON_1A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Fri Apr 25 12:08:22 2025]
+Error in rule bwaMem2_alignment:
+    jobid: 10
+    input: ../../output/mouse/cutadapt/CON_1A_1.fq.gz, ../../output/mouse/cutadapt/CON_1A_2.fq.gz
+    output: ../../output/mouse/bam/CON_1A.bam, ../../output/mouse/bam/CON_1A.sam
+    log: ../../output/log/mouse/CON_1A/bwa-alignment.txt (check log file(s) for error details)
+    conda-env: /home/luosg/miniconda3/envs/cfDNA_base
+    shell:
+        
+        bwa-mem2 mem -T 0 -t 15 /ChIP_seq_2/Data/index/Mus_musculus/GENCODE/GRCm39/BWA-mem2 ../../output/mouse/cutadapt/CON_1A_1.fq.gz ../../output/mouse/cutadapt/CON_1A_2.fq.gz -o ../../output/mouse/bam/CON_1A.sam > ../../output/log/mouse/CON_1A/bwa-alignment.txt 2>&1 
+        samtools view -b ../../output/mouse/bam/CON_1A.sam > ../../output/mouse/bam/CON_1A.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job bwaMem2_alignment since they might be corrupted:
+../../output/mouse/bam/CON_1A.sam
+[Fri Apr 25 12:21:44 2025]
+Finished job 6.
+4 of 35 steps (11%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-25T111126.906083.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

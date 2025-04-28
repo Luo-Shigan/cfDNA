@@ -1,0 +1,260 @@
+host: d419
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+addReadsGroup            4
+all                      1
+bwaMem2_alignment        4
+count_matrix_TE          4
+count_matrix_gene        1
+dedup                    4
+getBamStatistics         4
+getFragmentSize          1
+sort                     4
+wig                      4
+total                   31
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Sat Apr 26 14:24:10 2025]
+localrule bwaMem2_alignment:
+    input: ../../output/mouse/cutadapt/CON_1A_1.fq.gz, ../../output/mouse/cutadapt/CON_1A_2.fq.gz
+    output: ../../output/mouse/bam/CON_1A.bam, ../../output/mouse/bam/CON_1A.sam
+    log: ../../output/log/mouse/CON_1A/bwa-alignment.txt
+    jobid: 10
+    reason: Missing output files: ../../output/mouse/bam/CON_1A.bam; Code has changed since last execution
+    wildcards: genome=mouse, sample_id=CON_1A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sat Apr 26 14:24:14 2025]
+localrule bwaMem2_alignment:
+    input: ../../output/mouse/cutadapt/UCS_1A_1.fq.gz, ../../output/mouse/cutadapt/UCS_1A_2.fq.gz
+    output: ../../output/mouse/bam/UCS_1A.bam, ../../output/mouse/bam/UCS_1A.sam
+    log: ../../output/log/mouse/UCS_1A/bwa-alignment.txt
+    jobid: 5
+    reason: Missing output files: ../../output/mouse/bam/UCS_1A.bam; Code has changed since last execution
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Sun Apr 27 01:53:02 2025]
+Finished job 5.
+1 of 31 steps (3%) done
+Removing temporary output ../../output/mouse/bam/UCS_1A.sam.
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Apr 27 01:53:43 2025]
+localrule bwaMem2_alignment:
+    input: ../../output/mouse/cutadapt/CON_2A_1.fq.gz, ../../output/mouse/cutadapt/CON_2A_2.fq.gz
+    output: ../../output/mouse/bam/CON_2A.bam, ../../output/mouse/bam/CON_2A.sam
+    log: ../../output/log/mouse/CON_2A/bwa-alignment.txt
+    jobid: 15
+    reason: Missing output files: ../../output/mouse/bam/CON_2A.bam
+    wildcards: genome=mouse, sample_id=CON_2A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Sun Apr 27 04:24:36 2025]
+Finished job 10.
+2 of 31 steps (6%) done
+Removing temporary output ../../output/mouse/bam/CON_1A.sam.
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Apr 27 04:25:03 2025]
+localrule bwaMem2_alignment:
+    input: ../../output/mouse/cutadapt/UCS_2A_1.fq.gz, ../../output/mouse/cutadapt/UCS_2A_2.fq.gz
+    output: ../../output/mouse/bam/UCS_2A.bam, ../../output/mouse/bam/UCS_2A.sam
+    log: ../../output/log/mouse/UCS_2A/bwa-alignment.txt
+    jobid: 20
+    reason: Code has changed since last execution
+    wildcards: genome=mouse, sample_id=UCS_2A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Sun Apr 27 08:40:17 2025]
+Finished job 15.
+3 of 31 steps (10%) done
+Removing temporary output ../../output/mouse/bam/CON_2A.sam.
+Select jobs to execute...
+Execute 6 jobs...
+
+[Sun Apr 27 08:41:00 2025]
+localrule getBamStatistics:
+    input: ../../output/mouse/bam/UCS_1A.bam
+    output: ../../output/mouse/stats/UCS_1A/UCS_1A.txt
+    log: ../../output/log/mouse/UCS_1A/getBamStatistics.log
+    jobid: 31
+    reason: Missing output files: ../../output/mouse/stats/UCS_1A/UCS_1A.txt; Input files updated by another job: ../../output/mouse/bam/UCS_1A.bam
+    wildcards: genome=mouse, sample_id=UCS_1A
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sun Apr 27 08:41:00 2025]
+localrule sort:
+    input: ../../output/mouse/bam/CON_2A.bam
+    output: ../../output/mouse/bam-sorted/CON_2A.bam, ../../output/mouse/bam-sorted/CON_2A.bam.bai
+    log: ../../output/log/mouse/CON_2A/sort.log
+    jobid: 14
+    reason: Missing output files: ../../output/mouse/bam-sorted/CON_2A.bam; Input files updated by another job: ../../output/mouse/bam/CON_2A.bam
+    wildcards: genome=mouse, sample_id=CON_2A
+    threads: 4
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sun Apr 27 08:41:00 2025]
+localrule getBamStatistics:
+    input: ../../output/mouse/bam/CON_1A.bam
+    output: ../../output/mouse/stats/CON_1A/CON_1A.txt
+    log: ../../output/log/mouse/CON_1A/getBamStatistics.log
+    jobid: 32
+    reason: Missing output files: ../../output/mouse/stats/CON_1A/CON_1A.txt; Input files updated by another job: ../../output/mouse/bam/CON_1A.bam
+    wildcards: genome=mouse, sample_id=CON_1A
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sun Apr 27 08:41:00 2025]
+localrule sort:
+    input: ../../output/mouse/bam/UCS_1A.bam
+    output: ../../output/mouse/bam-sorted/UCS_1A.bam, ../../output/mouse/bam-sorted/UCS_1A.bam.bai
+    log: ../../output/log/mouse/UCS_1A/sort.log
+    jobid: 4
+    reason: Missing output files: ../../output/mouse/bam-sorted/UCS_1A.bam; Input files updated by another job: ../../output/mouse/bam/UCS_1A.bam
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 4
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sun Apr 27 08:41:00 2025]
+localrule getBamStatistics:
+    input: ../../output/mouse/bam/CON_2A.bam
+    output: ../../output/mouse/stats/CON_2A/CON_2A.txt
+    log: ../../output/log/mouse/CON_2A/getBamStatistics.log
+    jobid: 33
+    reason: Missing output files: ../../output/mouse/stats/CON_2A/CON_2A.txt; Input files updated by another job: ../../output/mouse/bam/CON_2A.bam
+    wildcards: genome=mouse, sample_id=CON_2A
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sun Apr 27 08:41:00 2025]
+localrule sort:
+    input: ../../output/mouse/bam/CON_1A.bam
+    output: ../../output/mouse/bam-sorted/CON_1A.bam, ../../output/mouse/bam-sorted/CON_1A.bam.bai
+    log: ../../output/log/mouse/CON_1A/sort.log
+    jobid: 9
+    reason: Missing output files: ../../output/mouse/bam-sorted/CON_1A.bam; Input files updated by another job: ../../output/mouse/bam/CON_1A.bam
+    wildcards: genome=mouse, sample_id=CON_1A
+    threads: 4
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Sun Apr 27 09:36:47 2025]
+Finished job 33.
+4 of 31 steps (13%) done
+[Sun Apr 27 09:48:27 2025]
+Finished job 31.
+5 of 31 steps (16%) done
+[Sun Apr 27 10:02:54 2025]
+Finished job 32.
+6 of 31 steps (19%) done
+[Sun Apr 27 10:39:42 2025]
+Finished job 14.
+7 of 31 steps (23%) done
+Removing temporary output ../../output/mouse/bam-sorted/CON_2A.bam.bai.
+Select jobs to execute...
+Waiting for more resources.
+[Sun Apr 27 11:39:33 2025]
+Finished job 4.
+8 of 31 steps (26%) done
+Removing temporary output ../../output/mouse/bam-sorted/UCS_1A.bam.bai.
+Execute 1 jobs...
+
+[Sun Apr 27 11:39:34 2025]
+localrule addReadsGroup:
+    input: ../../output/mouse/bam-sorted/UCS_1A.bam
+    output: ../../output/mouse/RG/UCS_1A.bam, ../../output/mouse/RG/UCS_1A.bam.bai
+    log: ../../output/log/mouse/UCS_1A/addReadsGroup.log
+    jobid: 3
+    reason: Missing output files: ../../output/mouse/RG/UCS_1A.bam; Input files updated by another job: ../../output/mouse/bam-sorted/UCS_1A.bam
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 10
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Sun Apr 27 11:40:32 2025]
+Finished job 9.
+9 of 31 steps (29%) done
+Removing temporary output ../../output/mouse/bam-sorted/CON_1A.bam.bai.
+Select jobs to execute...
+Waiting for more resources.
+[Sun Apr 27 11:48:29 2025]
+Finished job 20.
+10 of 31 steps (32%) done
+Removing temporary output ../../output/mouse/bam/UCS_2A.sam.
+Execute 2 jobs...
+
+[Sun Apr 27 11:49:48 2025]
+localrule addReadsGroup:
+    input: ../../output/mouse/bam-sorted/CON_1A.bam
+    output: ../../output/mouse/RG/CON_1A.bam, ../../output/mouse/RG/CON_1A.bam.bai
+    log: ../../output/log/mouse/CON_1A/addReadsGroup.log
+    jobid: 8
+    reason: Missing output files: ../../output/mouse/RG/CON_1A.bam; Input files updated by another job: ../../output/mouse/bam-sorted/CON_1A.bam
+    wildcards: genome=mouse, sample_id=CON_1A
+    threads: 10
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sun Apr 27 11:49:48 2025]
+localrule addReadsGroup:
+    input: ../../output/mouse/bam-sorted/CON_2A.bam
+    output: ../../output/mouse/RG/CON_2A.bam, ../../output/mouse/RG/CON_2A.bam.bai
+    log: ../../output/log/mouse/CON_2A/addReadsGroup.log
+    jobid: 13
+    reason: Missing output files: ../../output/mouse/RG/CON_2A.bam; Input files updated by another job: ../../output/mouse/bam-sorted/CON_2A.bam
+    wildcards: genome=mouse, sample_id=CON_2A
+    threads: 10
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule addReadsGroup in file /ChIP_seq_2/Data/serum/serum_aging/workflow/snakemake/cfDNA-count_fragmentSize.smk, line 162:
+Job 3  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+../../output/mouse/RG/UCS_1A.bam.bai (missing locally, parent dir contents: UCS_1A.bam, CON_2A.bam, CON_1A.bam)
+Removing output files of failed job addReadsGroup since they might be corrupted:
+../../output/mouse/RG/UCS_1A.bam
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule addReadsGroup in file /ChIP_seq_2/Data/serum/serum_aging/workflow/snakemake/cfDNA-count_fragmentSize.smk, line 162:
+Job 13  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+../../output/mouse/RG/CON_2A.bam.bai (missing locally, parent dir contents: CON_2A.bam, CON_1A.bam)
+Removing output files of failed job addReadsGroup since they might be corrupted:
+../../output/mouse/RG/CON_2A.bam
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule addReadsGroup in file /ChIP_seq_2/Data/serum/serum_aging/workflow/snakemake/cfDNA-count_fragmentSize.smk, line 162:
+Job 8  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+../../output/mouse/RG/CON_1A.bam.bai (missing locally, parent dir contents: CON_1A.bam)
+Removing output files of failed job addReadsGroup since they might be corrupted:
+../../output/mouse/RG/CON_1A.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-26T142409.561704.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

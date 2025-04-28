@@ -1,0 +1,326 @@
+host: d419
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+addReadsGroup            4
+all                      1
+count_matrix_TE          4
+count_matrix_gene        1
+dedup                    4
+getBamStatistics         1
+getFragmentSize          1
+sort                     1
+wig                      4
+total                   21
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Sun Apr 27 16:48:02 2025]
+localrule addReadsGroup:
+    input: ../../output/mouse/bam-sorted/CON_1A.bam
+    output: ../../output/mouse/RG/CON_1A.bam, ../../output/mouse/RG/CON_1A.bam.bai
+    log: ../../output/log/mouse/CON_1A/addReadsGroup.log
+    jobid: 8
+    reason: Missing output files: ../../output/mouse/RG/CON_1A.bam; Code has changed since last execution
+    wildcards: genome=mouse, sample_id=CON_1A
+    threads: 10
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sun Apr 27 16:48:05 2025]
+localrule addReadsGroup:
+    input: ../../output/mouse/bam-sorted/UCS_1A.bam
+    output: ../../output/mouse/RG/UCS_1A.bam, ../../output/mouse/RG/UCS_1A.bam.bai
+    log: ../../output/log/mouse/UCS_1A/addReadsGroup.log
+    jobid: 3
+    reason: Missing output files: ../../output/mouse/RG/UCS_1A.bam; Code has changed since last execution
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 10
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sun Apr 27 16:48:05 2025]
+localrule addReadsGroup:
+    input: ../../output/mouse/bam-sorted/CON_2A.bam
+    output: ../../output/mouse/RG/CON_2A.bam, ../../output/mouse/RG/CON_2A.bam.bai
+    log: ../../output/log/mouse/CON_2A/addReadsGroup.log
+    jobid: 13
+    reason: Missing output files: ../../output/mouse/RG/CON_2A.bam; Code has changed since last execution
+    wildcards: genome=mouse, sample_id=CON_2A
+    threads: 10
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Sun Apr 27 18:09:08 2025]
+Finished job 13.
+1 of 21 steps (5%) done
+Removing temporary output ../../output/mouse/bam-sorted/CON_2A.bam.
+Select jobs to execute...
+Execute 2 jobs...
+
+[Sun Apr 27 18:09:23 2025]
+localrule sort:
+    input: ../../output/mouse/bam/UCS_2A.bam
+    output: ../../output/mouse/bam-sorted/UCS_2A.bam, ../../output/mouse/bam-sorted/UCS_2A.bam.bai
+    log: ../../output/log/mouse/UCS_2A/sort.log
+    jobid: 19
+    reason: Missing output files: ../../output/mouse/bam-sorted/UCS_2A.bam
+    wildcards: genome=mouse, sample_id=UCS_2A
+    threads: 4
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+
+[Sun Apr 27 18:09:23 2025]
+localrule getBamStatistics:
+    input: ../../output/mouse/bam/UCS_2A.bam
+    output: ../../output/mouse/stats/UCS_2A/UCS_2A.txt
+    log: ../../output/log/mouse/UCS_2A/getBamStatistics.log
+    jobid: 34
+    reason: Missing output files: ../../output/mouse/stats/UCS_2A/UCS_2A.txt
+    wildcards: genome=mouse, sample_id=UCS_2A
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Sun Apr 27 18:32:01 2025]
+Finished job 3.
+2 of 21 steps (10%) done
+Removing temporary output ../../output/mouse/bam-sorted/UCS_1A.bam.
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Apr 27 18:32:26 2025]
+localrule wig:
+    input: ../../output/mouse/RG/UCS_1A.bam
+    output: ../../output/mouse/wig/UCS_1A.bigwig
+    log: ../../output/log/mouse/UCS_1A/wig.log
+    jobid: 26
+    reason: Missing output files: ../../output/mouse/wig/UCS_1A.bigwig; Input files updated by another job: ../../output/mouse/RG/UCS_1A.bam
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/GCBias
+[Sun Apr 27 19:06:58 2025]
+Finished job 26.
+3 of 21 steps (14%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Apr 27 19:06:59 2025]
+localrule wig:
+    input: ../../output/mouse/RG/CON_2A.bam
+    output: ../../output/mouse/wig/CON_2A.bigwig
+    log: ../../output/log/mouse/CON_2A/wig.log
+    jobid: 28
+    reason: Missing output files: ../../output/mouse/wig/CON_2A.bigwig; Input files updated by another job: ../../output/mouse/RG/CON_2A.bam
+    wildcards: genome=mouse, sample_id=CON_2A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/GCBias
+[Sun Apr 27 19:25:31 2025]
+Finished job 8.
+4 of 21 steps (19%) done
+Removing temporary output ../../output/mouse/bam-sorted/CON_1A.bam.
+Select jobs to execute...
+Waiting for more resources.
+[Sun Apr 27 19:35:59 2025]
+Finished job 28.
+5 of 21 steps (24%) done
+Execute 1 jobs...
+
+[Sun Apr 27 19:35:59 2025]
+localrule dedup:
+    input: ../../output/mouse/RG/UCS_1A.bam
+    output: ../../output/mouse/bam-sorted-deduped/UCS_1A.bam, ../../output/mouse/bam-sorted-deduped/UCS_1A.bam.bai, ../../output/mouse/bam-sorted-deduped/UCS_1A_dedup-metrics.txt
+    log: ../../output/log/mouse/UCS_1A/MarkDuplicates.log
+    jobid: 2
+    reason: Missing output files: ../../output/mouse/bam-sorted-deduped/UCS_1A.bam; Input files updated by another job: ../../output/mouse/RG/UCS_1A.bam
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 16
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Sun Apr 27 19:43:17 2025]
+Finished job 34.
+6 of 21 steps (29%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Sun Apr 27 19:43:17 2025]
+localrule getFragmentSize:
+    input: ../../output/mouse/stats/UCS_1A/UCS_1A.txt, ../../output/mouse/stats/CON_1A/CON_1A.txt, ../../output/mouse/stats/CON_2A/CON_2A.txt, ../../output/mouse/stats/UCS_2A/UCS_2A.txt
+    output: ../../output/mouse/fragment/FragmentSize.txt, ../../output/mouse/fragment/FragmentSize.png
+    log: ../../output/log/mouse/getFragmentSize.log
+    jobid: 30
+    reason: Missing output files: ../../output/mouse/fragment/FragmentSize.png, ../../output/mouse/fragment/FragmentSize.txt; Input files updated by another job: ../../output/mouse/stats/UCS_2A/UCS_2A.txt
+    wildcards: genome=mouse
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/GCBias
+[Sun Apr 27 19:43:35 2025]
+Finished job 30.
+7 of 21 steps (33%) done
+Select jobs to execute...
+Waiting for more resources.
+[Sun Apr 27 20:38:38 2025]
+Finished job 19.
+8 of 21 steps (38%) done
+Removing temporary output ../../output/mouse/bam-sorted/UCS_2A.bam.bai.
+Execute 1 jobs...
+
+[Sun Apr 27 20:38:38 2025]
+localrule addReadsGroup:
+    input: ../../output/mouse/bam-sorted/UCS_2A.bam
+    output: ../../output/mouse/RG/UCS_2A.bam, ../../output/mouse/RG/UCS_2A.bam.bai
+    log: ../../output/log/mouse/UCS_2A/addReadsGroup.log
+    jobid: 18
+    reason: Missing output files: ../../output/mouse/RG/UCS_2A.bam; Input files updated by another job: ../../output/mouse/bam-sorted/UCS_2A.bam
+    wildcards: genome=mouse, sample_id=UCS_2A
+    threads: 10
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Sun Apr 27 21:19:36 2025]
+Finished job 18.
+9 of 21 steps (43%) done
+Removing temporary output ../../output/mouse/bam-sorted/UCS_2A.bam.
+Select jobs to execute...
+Waiting for more resources.
+[Sun Apr 27 22:02:59 2025]
+Finished job 2.
+10 of 21 steps (48%) done
+Execute 2 jobs...
+
+[Sun Apr 27 22:02:59 2025]
+localrule wig:
+    input: ../../output/mouse/RG/UCS_2A.bam
+    output: ../../output/mouse/wig/UCS_2A.bigwig
+    log: ../../output/log/mouse/UCS_2A/wig.log
+    jobid: 29
+    reason: Missing output files: ../../output/mouse/wig/UCS_2A.bigwig; Input files updated by another job: ../../output/mouse/RG/UCS_2A.bam
+    wildcards: genome=mouse, sample_id=UCS_2A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/GCBias
+
+[Sun Apr 27 22:02:59 2025]
+localrule wig:
+    input: ../../output/mouse/RG/CON_1A.bam
+    output: ../../output/mouse/wig/CON_1A.bigwig
+    log: ../../output/log/mouse/CON_1A/wig.log
+    jobid: 27
+    reason: Missing output files: ../../output/mouse/wig/CON_1A.bigwig; Input files updated by another job: ../../output/mouse/RG/CON_1A.bam
+    wildcards: genome=mouse, sample_id=CON_1A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/GCBias
+[Sun Apr 27 22:25:44 2025]
+Finished job 29.
+11 of 21 steps (52%) done
+Select jobs to execute...
+Waiting for more resources.
+[Sun Apr 27 22:31:11 2025]
+Finished job 27.
+12 of 21 steps (57%) done
+Execute 1 jobs...
+
+[Sun Apr 27 22:31:11 2025]
+localrule dedup:
+    input: ../../output/mouse/RG/UCS_2A.bam
+    output: ../../output/mouse/bam-sorted-deduped/UCS_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_2A.bam.bai, ../../output/mouse/bam-sorted-deduped/UCS_2A_dedup-metrics.txt
+    log: ../../output/log/mouse/UCS_2A/MarkDuplicates.log
+    jobid: 17
+    reason: Missing output files: ../../output/mouse/bam-sorted-deduped/UCS_2A.bam; Input files updated by another job: ../../output/mouse/RG/UCS_2A.bam
+    wildcards: genome=mouse, sample_id=UCS_2A
+    threads: 16
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Mon Apr 28 00:10:15 2025]
+Finished job 17.
+13 of 21 steps (62%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 00:10:15 2025]
+localrule dedup:
+    input: ../../output/mouse/RG/CON_1A.bam
+    output: ../../output/mouse/bam-sorted-deduped/CON_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_1A.bam.bai, ../../output/mouse/bam-sorted-deduped/CON_1A_dedup-metrics.txt
+    log: ../../output/log/mouse/CON_1A/MarkDuplicates.log
+    jobid: 7
+    reason: Missing output files: ../../output/mouse/bam-sorted-deduped/CON_1A.bam; Input files updated by another job: ../../output/mouse/RG/CON_1A.bam
+    wildcards: genome=mouse, sample_id=CON_1A
+    threads: 16
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Mon Apr 28 02:47:26 2025]
+Finished job 7.
+14 of 21 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 02:47:26 2025]
+localrule dedup:
+    input: ../../output/mouse/RG/CON_2A.bam
+    output: ../../output/mouse/bam-sorted-deduped/CON_2A.bam, ../../output/mouse/bam-sorted-deduped/CON_2A.bam.bai, ../../output/mouse/bam-sorted-deduped/CON_2A_dedup-metrics.txt
+    log: ../../output/log/mouse/CON_2A/MarkDuplicates.log
+    jobid: 12
+    reason: Missing output files: ../../output/mouse/bam-sorted-deduped/CON_2A.bam; Input files updated by another job: ../../output/mouse/RG/CON_2A.bam
+    wildcards: genome=mouse, sample_id=CON_2A
+    threads: 16
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Mon Apr 28 04:07:38 2025]
+Finished job 12.
+15 of 21 steps (71%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 04:07:39 2025]
+localrule count_matrix_gene:
+    input: ../../output/mouse/bam-sorted-deduped/UCS_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_2A.bam
+    output: ../../output/mouse/matrix/gene/count_matrix_exon.txt, ../../output/mouse/matrix/gene/count_matrix_exon.txt.summary, ../../output/mouse/matrix/gene/CPM-TMM_matrix_exon.txt
+    log: ../../output/mouse/matrix/gene/log/count_matrix_exon.log, ../../output/mouse/matrix/gene/log/CPM-TMM_matrix_exon.log
+    jobid: 1
+    reason: Missing output files: ../../output/mouse/matrix/gene/count_matrix_exon.txt.summary, ../../output/mouse/matrix/gene/count_matrix_exon.txt, ../../output/mouse/matrix/gene/CPM-TMM_matrix_exon.txt; Input files updated by another job: ../../output/mouse/bam-sorted-deduped/CON_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_1A.bam
+    wildcards: genome=mouse, region=exon
+    threads: 25
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Mon Apr 28 04:07:43 2025]
+Error in rule count_matrix_gene:
+    jobid: 1
+    input: ../../output/mouse/bam-sorted-deduped/UCS_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_2A.bam
+    output: ../../output/mouse/matrix/gene/count_matrix_exon.txt, ../../output/mouse/matrix/gene/count_matrix_exon.txt.summary, ../../output/mouse/matrix/gene/CPM-TMM_matrix_exon.txt
+    log: ../../output/mouse/matrix/gene/log/count_matrix_exon.log, ../../output/mouse/matrix/gene/log/CPM-TMM_matrix_exon.log (check log file(s) for error details)
+    conda-env: /home/luosg/miniconda3/envs/cfDNA_base
+    shell:
+        
+        #gene_name
+        featureCounts -T 25 -B -O -t exon -g gene_id -M -p             -a /ChIP_seq_2/StemCells/data/genome/gencode.v47.primary_assembly.annotation.gtf             -o ../../output/mouse/matrix/gene/count_matrix_exon.txt ../../output/mouse/bam-sorted-deduped/UCS_1A.bam ../../output/mouse/bam-sorted-deduped/CON_1A.bam ../../output/mouse/bam-sorted-deduped/CON_2A.bam ../../output/mouse/bam-sorted-deduped/UCS_2A.bam             > ../../output/mouse/matrix/gene/log/count_matrix_exon.log 2>&1
+        
+        /usr/bin/Rscript scripts/quantification/multiFeatureCounts2countMat.R             -i ../../output/mouse/matrix/gene/count_matrix_exon.txt              -o ../../output/mouse/matrix/gene/tmp_exon ;
+
+        /usr/bin/Rscript scripts/quantification/run-NormCountMat.R             -i ../../output/mouse/matrix/gene/tmp_exon             -o ../../output/mouse/matrix/gene/CPM-TMM_matrix_exon.txt             -m TMM             > ../../output/mouse/matrix/gene/log/CPM-TMM_matrix_exon.log 2>&1
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-27T164801.196155.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

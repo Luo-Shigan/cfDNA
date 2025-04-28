@@ -1,0 +1,117 @@
+host: d419
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+all                      1
+count_matrix_TE          4
+count_matrix_gene        1
+total                    6
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 10:03:56 2025]
+localrule count_matrix_gene:
+    input: ../../output/mouse/bam-sorted-deduped/UCS_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_2A.bam
+    output: ../../output/mouse/matrix/gene/count_matrix_exon.txt, ../../output/mouse/matrix/gene/count_matrix_exon.txt.summary, ../../output/mouse/matrix/gene/CPM-TMM_matrix_exon.txt
+    log: ../../output/mouse/matrix/gene/log/count_matrix_exon.log, ../../output/mouse/matrix/gene/log/CPM-TMM_matrix_exon.log
+    jobid: 1
+    reason: Missing output files: ../../output/mouse/matrix/gene/count_matrix_exon.txt, ../../output/mouse/matrix/gene/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/gene/count_matrix_exon.txt.summary; Params have changed since last execution: Union of exclusive params before and now across all output: before: '/ChIP_seq_2/StemCells/data/genome/gencode.v47.primary_assembly.annotation.gtf' now: '/ChIP_seq_2/Data/index/Mus_musculus/GENCODE/GRCm39/gencode.vM36.primary_assembly.annotation.gtf' 
+    wildcards: genome=mouse, region=exon
+    threads: 25
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Mon Apr 28 10:11:03 2025]
+Finished job 1.
+1 of 6 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 10:11:03 2025]
+localrule count_matrix_TE:
+    input: ../../output/mouse/bam-sorted-deduped/UCS_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_2A.bam
+    output: ../../output/mouse/matrix/TE/family_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/family_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/family_id/CPM-TMM_matrix_exon.txt
+    log: ../../output/mouse/matrix/TE/family_id/log/count_matrix_exon.log, ../../output/mouse/matrix/TE/family_id/log/CPM-TMM_matrix_exon.log
+    jobid: 24
+    reason: Missing output files: ../../output/mouse/matrix/TE/family_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/family_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/family_id/CPM-TMM_matrix_exon.txt
+    wildcards: genome=mouse, level=family_id, region=exon
+    threads: 25
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Mon Apr 28 10:17:06 2025]
+Finished job 24.
+2 of 6 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 10:17:06 2025]
+localrule count_matrix_TE:
+    input: ../../output/mouse/bam-sorted-deduped/UCS_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_2A.bam
+    output: ../../output/mouse/matrix/TE/class_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/class_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/class_id/CPM-TMM_matrix_exon.txt
+    log: ../../output/mouse/matrix/TE/class_id/log/count_matrix_exon.log, ../../output/mouse/matrix/TE/class_id/log/CPM-TMM_matrix_exon.log
+    jobid: 25
+    reason: Missing output files: ../../output/mouse/matrix/TE/class_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/class_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/class_id/count_matrix_exon.txt.summary
+    wildcards: genome=mouse, level=class_id, region=exon
+    threads: 25
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Mon Apr 28 10:21:26 2025]
+Finished job 25.
+3 of 6 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 10:21:26 2025]
+localrule count_matrix_TE:
+    input: ../../output/mouse/bam-sorted-deduped/UCS_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_2A.bam
+    output: ../../output/mouse/matrix/TE/transcript_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/transcript_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/transcript_id/CPM-TMM_matrix_exon.txt
+    log: ../../output/mouse/matrix/TE/transcript_id/log/count_matrix_exon.log, ../../output/mouse/matrix/TE/transcript_id/log/CPM-TMM_matrix_exon.log
+    jobid: 23
+    reason: Missing output files: ../../output/mouse/matrix/TE/transcript_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/transcript_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/transcript_id/count_matrix_exon.txt.summary
+    wildcards: genome=mouse, level=transcript_id, region=exon
+    threads: 25
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Mon Apr 28 10:27:28 2025]
+Finished job 23.
+4 of 6 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 10:27:28 2025]
+localrule count_matrix_TE:
+    input: ../../output/mouse/bam-sorted-deduped/UCS_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_1A.bam, ../../output/mouse/bam-sorted-deduped/CON_2A.bam, ../../output/mouse/bam-sorted-deduped/UCS_2A.bam
+    output: ../../output/mouse/matrix/TE/gene_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/gene_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/gene_id/CPM-TMM_matrix_exon.txt
+    log: ../../output/mouse/matrix/TE/gene_id/log/count_matrix_exon.log, ../../output/mouse/matrix/TE/gene_id/log/CPM-TMM_matrix_exon.log
+    jobid: 22
+    reason: Missing output files: ../../output/mouse/matrix/TE/gene_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/gene_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/gene_id/count_matrix_exon.txt.summary
+    wildcards: genome=mouse, level=gene_id, region=exon
+    threads: 25
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Mon Apr 28 10:30:33 2025]
+Finished job 22.
+5 of 6 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 28 10:30:33 2025]
+localrule all:
+    input: ../../output/mouse/matrix/gene/count_matrix_exon.txt, ../../output/mouse/matrix/gene/count_matrix_exon.txt.summary, ../../output/mouse/matrix/gene/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/gene_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/transcript_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/family_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/class_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/gene_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/transcript_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/family_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/class_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/gene_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/transcript_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/family_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/class_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/wig/UCS_1A.bigwig, ../../output/mouse/wig/CON_1A.bigwig, ../../output/mouse/wig/CON_2A.bigwig, ../../output/mouse/wig/UCS_2A.bigwig, ../../output/mouse/fragment/FragmentSize.txt, ../../output/mouse/fragment/FragmentSize.png
+    jobid: 0
+    reason: Input files updated by another job: ../../output/mouse/matrix/gene/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/transcript_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/family_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/class_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/transcript_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/class_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/gene_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/transcript_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/class_id/count_matrix_exon.txt.summary, ../../output/mouse/matrix/TE/gene_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/TE/gene_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/family_id/count_matrix_exon.txt, ../../output/mouse/matrix/TE/family_id/CPM-TMM_matrix_exon.txt, ../../output/mouse/matrix/gene/count_matrix_exon.txt, ../../output/mouse/matrix/gene/CPM-TMM_matrix_exon.txt
+    resources: tmpdir=/tmp
+
+[Mon Apr 28 10:30:33 2025]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2025-04-28T100356.315680.snakemake.log

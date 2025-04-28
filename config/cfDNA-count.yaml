@@ -1,5 +1,4 @@
 tmp_dir: ./temp # dir to store temporary files
-genome: "/ChIP_seq_2/StemCells/data/genome/GRCh38.primary_assembly.genome.fa"
 GC: # for GCBias
   genome_size:
     - GRCh37: 2864785220
@@ -20,16 +19,29 @@ conda:
 wig:
   bin: 50
 bwaMem2:
-  human: "/ChIP_seq_2/Data/index/Homo_sapiens/GENCODE/GRCh38/BWA-mem2"
-  mouse: "/ChIP_seq_2/Data/index/Mus_musculus/GENCODE/GRCm39/BWA-mem2"
+  human: "/ChIP_seq_2/Data/index/Homo_sapiens/GENCODE/GRCh38/BWA-mem2/GRCh38"
+  mouse: "/ChIP_seq_2/Data/index/Mus_musculus/GENCODE/GRCm39/BWA-mem2/GRCm39"
 count_matrix_gene:
-  region: "exon"
-  gtf: "/ChIP_seq_2/StemCells/data/genome/gencode.v47.primary_assembly.annotation.gtf"
+  human:
+    region: "exon"
+    gtf: "/ChIP_seq_2/Data/index/Homo_sapiens/GENCODE/GRCh38/gencode.v47.primary_assembly.annotation.gtf"
+  mouse:
+    region: "exon"
+    gtf: "/ChIP_seq_2/Data/index/Mus_musculus/GENCODE/GRCm39/gencode.vM36.primary_assembly.annotation.gtf"
 count_matrix_TE:
-  region: "exon"
-  gtf: "/ChIP_seq_2/StemCells/data/genome/GRCh38_GENCODE_rmsk_TE.gtf"
-  level: 
-    - "gene_id"
-    - "transcript_id"
-    - "family_id"
-    - "class_id"
+  human:
+    region: "exon"
+    gtf: "/ChIP_seq_2/StemCells/data/genome/GRCh38_GENCODE_rmsk_TE.gtf"
+    level: 
+      - "gene_id"
+      - "transcript_id"
+      - "family_id"
+      - "class_id"
+  mouse:
+    region: "exon"
+    gtf: "/ChIP_seq_2/Data/index/Mus_musculus/GENCODE/GRCm39/GRCm39_GENCODE_rmsk_TE.gtf"
+    level: 
+      - "gene_id"
+      - "transcript_id"
+      - "family_id"
+      - "class_id"

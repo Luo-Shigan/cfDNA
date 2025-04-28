@@ -9,13 +9,14 @@ remove_duplications = config.get('remove_duplications', False)
 
 
 ###### control variable
+genomes = ['mouse']
 samples = glob_wildcards(indir + "/{sample_id}_1.fq.gz").sample_id
 ## Gene variable
-gene_regions = config['count_matrix_TE']['region']
+gene_regions = config['count_matrix_TE']['mouse']['region']
 ##TE variable
-TE_regions = config['count_matrix_TE']['region']
-levels = config['count_matrix_TE']['level']
-genomes = ['mouse']
+TE_regions = config['count_matrix_TE']['mouse']['region']
+levels = config['count_matrix_TE']['mouse']['level']
+
 
 ###### control file
 def request():
@@ -50,8 +51,8 @@ rule trimming:
     output:
         fastq1 = outdir + "/{genome}/cutadapt/{sample_id}_1.fq.gz",
         fastq2 = outdir + "/{genome}/cutadapt/{sample_id}_2.fq.gz",
-        report1 = outdir + "/{genome}/cutadapt/{sample_id}/trimming_statistics_1.txt",
-        report2 = outdir + "/{genome}/cutadapt/{sample_id}/trimming_statistics_2.txt"
+        report1 = outdir + "/log/{genome}/{sample_id}/trimming_statistics_1.txt",
+        report2 = outdir + "/log/{genome}/{sample_id}/trimming_statistics_2.txt"
     log:
         outdir + "/log/{genome}/{sample_id}/trimming.log"
     params:
@@ -107,7 +108,7 @@ rule bwaMem2_alignment:
     shell:
         """
         bwa-mem2 mem -T 0 -t {threads} {params.index} {input.fastq1} {input.fastq2} -o {output.sam} > {log} 2>&1 
-        samtools view -b {output.sam} > {output.bam}
+        samtools view -b {output.sam} > {output.bam} 2>{log}
         """
 # Get unmapped reads from bwa"s bam file
 rule getUnaligned:
@@ -179,7 +180,7 @@ rule addReadsGroup:
         gatk AddOrReplaceReadGroups {params.java} \
             --TMP_DIR {params.tmp_dir} --INPUT {input.bam} --OUTPUT {output.bam} \
             -SO coordinate --RGLB cfDNA --RGPL BGI --RGPU DNBSEQ --RGSM {params.id} > {log.log} 2>&1
-        samtools index -@ {threads} {output.bam} 2 >> {log.log}
+        samtools index -@ {threads} {output.bam} 2>> {log.log}
         """
 # remove duplicate reads
 rule dedup:
@@ -219,7 +220,7 @@ rule count_matrix_gene:
     params:
         tmp = outdir + "/{genome}/matrix/gene/tmp_{region}",
         region = "{region}",
-        gtf = config['count_matrix_gene']['gtf'],
+        gtf = lambda wildcards: config['count_matrix_gene'][wildcards.genome]['gtf'],
     shell:
         """
         #gene_name
@@ -255,7 +256,7 @@ rule count_matrix_TE:
         tmp = outdir + "/{genome}/matrix/TE/{level}/tmp_{region}",
         region = "{region}",
         level = "{level}",
-        gtf = config['count_matrix_TE']['gtf'],
+        gtf = lambda wildcards: config['count_matrix_TE'][wildcards.genome]['gtf'],
     shell:
         """
         featureCounts -T {threads} -B -O -t {params.region} -g {params.level} -M -p \
@@ -277,7 +278,7 @@ rule count_matrix_TE:
 # get WIG files (for IGV visualization)
 rule wig:
     input:
-        bam = outdir + "/{genome}/bam/{sample_id}.bam" if not remove_duplications else outdir+"/{genome}/bam-sorted-deduped/{sample_id}.bam"
+        bam = outdir + "/{genome}/RG/{sample_id}.bam" if not remove_duplications else outdir+"/{genome}/bam-sorted-deduped/{sample_id}.bam"
     output:
         bigwig = outdir + "/{genome}/wig/{sample_id}.bigwig"
     log:

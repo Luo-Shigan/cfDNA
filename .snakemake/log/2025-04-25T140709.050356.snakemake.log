@@ -1,0 +1,157 @@
+host: d419
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 30
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+addReadsGroup            4
+all                      1
+bwaMem2_alignment        4
+count_matrix_TE          4
+count_matrix_gene        1
+dedup                    4
+getBamStatistics         4
+getFragmentSize          1
+sort                     4
+trimming                 4
+wig                      4
+total                   35
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Fri Apr 25 14:07:09 2025]
+localrule trimming:
+    input: ../../data/fq/CON_2A_1.fq.gz, ../../data/fq/CON_2A_2.fq.gz
+    output: ../../output/mouse/cutadapt/CON_2A_1.fq.gz, ../../output/mouse/cutadapt/CON_2A_2.fq.gz, ../../output/mouse/cutadapt/CON_2A/trimming_statistics_1.txt, ../../output/mouse/cutadapt/CON_2A/trimming_statistics_2.txt
+    log: ../../output/log/mouse/CON_2A/trimming.log
+    jobid: 16
+    reason: Code has changed since last execution
+    wildcards: genome=mouse, sample_id=CON_2A
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 14:07:15 2025]
+localrule trimming:
+    input: ../../data/fq/CON_1A_1.fq.gz, ../../data/fq/CON_1A_2.fq.gz
+    output: ../../output/mouse/cutadapt/CON_1A_1.fq.gz, ../../output/mouse/cutadapt/CON_1A_2.fq.gz, ../../output/mouse/cutadapt/CON_1A/trimming_statistics_1.txt, ../../output/mouse/cutadapt/CON_1A/trimming_statistics_2.txt
+    log: ../../output/log/mouse/CON_1A/trimming.log
+    jobid: 11
+    reason: Code has changed since last execution
+    wildcards: genome=mouse, sample_id=CON_1A
+    threads: 8
+    resources: tmpdir=/tmp
+
+
+[Fri Apr 25 14:07:21 2025]
+localrule trimming:
+    input: ../../data/fq/UCS_1A_1.fq.gz, ../../data/fq/UCS_1A_2.fq.gz
+    output: ../../output/mouse/cutadapt/UCS_1A_1.fq.gz, ../../output/mouse/cutadapt/UCS_1A_2.fq.gz, ../../output/mouse/cutadapt/UCS_1A/trimming_statistics_1.txt, ../../output/mouse/cutadapt/UCS_1A/trimming_statistics_2.txt
+    log: ../../output/log/mouse/UCS_1A/trimming.log
+    jobid: 6
+    reason: Code has changed since last execution
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 8
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 14:46:10 2025]
+Finished job 16.
+1 of 35 steps (3%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 14:46:10 2025]
+localrule trimming:
+    input: ../../data/fq/UCS_2A_1.fq.gz, ../../data/fq/UCS_2A_2.fq.gz
+    output: ../../output/mouse/cutadapt/UCS_2A_1.fq.gz, ../../output/mouse/cutadapt/UCS_2A_2.fq.gz, ../../output/mouse/cutadapt/UCS_2A/trimming_statistics_1.txt, ../../output/mouse/cutadapt/UCS_2A/trimming_statistics_2.txt
+    log: ../../output/log/mouse/UCS_2A/trimming.log
+    jobid: 21
+    reason: Code has changed since last execution
+    wildcards: genome=mouse, sample_id=UCS_2A
+    threads: 8
+    resources: tmpdir=/tmp
+
+[Fri Apr 25 14:53:21 2025]
+Finished job 6.
+2 of 35 steps (6%) done
+Select jobs to execute...
+Waiting for more resources.
+[Fri Apr 25 15:05:00 2025]
+Finished job 11.
+3 of 35 steps (9%) done
+Execute 1 jobs...
+
+[Fri Apr 25 15:05:00 2025]
+localrule bwaMem2_alignment:
+    input: ../../output/mouse/cutadapt/UCS_1A_1.fq.gz, ../../output/mouse/cutadapt/UCS_1A_2.fq.gz
+    output: ../../output/mouse/bam/UCS_1A.bam, ../../output/mouse/bam/UCS_1A.sam
+    log: ../../output/log/mouse/UCS_1A/bwa-alignment.txt
+    jobid: 5
+    reason: Missing output files: ../../output/mouse/bam/UCS_1A.bam; Input files updated by another job: ../../output/mouse/cutadapt/UCS_1A_1.fq.gz, ../../output/mouse/cutadapt/UCS_1A_2.fq.gz
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Fri Apr 25 15:19:47 2025]
+Finished job 21.
+4 of 35 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 15:19:47 2025]
+localrule bwaMem2_alignment:
+    input: ../../output/mouse/cutadapt/UCS_2A_1.fq.gz, ../../output/mouse/cutadapt/UCS_2A_2.fq.gz
+    output: ../../output/mouse/bam/UCS_2A.bam, ../../output/mouse/bam/UCS_2A.sam
+    log: ../../output/log/mouse/UCS_2A/bwa-alignment.txt
+    jobid: 20
+    reason: Missing output files: ../../output/mouse/bam/UCS_2A.bam; Input files updated by another job: ../../output/mouse/cutadapt/UCS_2A_2.fq.gz, ../../output/mouse/cutadapt/UCS_2A_1.fq.gz
+    wildcards: genome=mouse, sample_id=UCS_2A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/cfDNA_base
+[Fri Apr 25 20:21:14 2025]
+Finished job 5.
+5 of 35 steps (14%) done
+Removing temporary output ../../output/mouse/bam/UCS_1A.sam.
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr 25 20:22:27 2025]
+localrule wig:
+    input: ../../output/mouse/bam/UCS_1A.bam
+    output: ../../output/mouse/wig/UCS_1A.bigwig
+    log: ../../output/log/mouse/UCS_1A/wig.log
+    jobid: 26
+    reason: Missing output files: ../../output/mouse/wig/UCS_1A.bigwig; Input files updated by another job: ../../output/mouse/bam/UCS_1A.bam
+    wildcards: genome=mouse, sample_id=UCS_1A
+    threads: 15
+    resources: tmpdir=/tmp
+
+Activating conda environment: ../../../../../../home/luosg/miniconda3/envs/GCBias
+[Fri Apr 25 20:22:31 2025]
+Error in rule wig:
+    jobid: 26
+    input: ../../output/mouse/bam/UCS_1A.bam
+    output: ../../output/mouse/wig/UCS_1A.bigwig
+    log: ../../output/log/mouse/UCS_1A/wig.log (check log file(s) for error details)
+    conda-env: /home/luosg/miniconda3/envs/GCBias
+    shell:
+        
+        bamCoverage --binSize 50 --numberOfProcessors 15 --extendReads --normalizeUsing CPM -b ../../output/mouse/bam/UCS_1A.bam -o ../../output/mouse/wig/UCS_1A.bigwig > ../../output/log/mouse/UCS_1A/wig.log 2>&1 
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Apr 25 21:36:32 2025]
+Finished job 20.
+6 of 35 steps (17%) done
+Removing temporary output ../../output/mouse/bam/UCS_2A.sam.
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-04-25T140709.050356.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
